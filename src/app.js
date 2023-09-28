@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 const cors  = require("cors");
+const morgan   = require("morgan");
 
 const notFoundMiddleware = require("./middleware /not-found");
 const errorMiddleware = require("./middleware /error");
@@ -10,6 +11,7 @@ const app = express();
 
 
 app.use(cors());
+app.use(morgan("combined"));
 app.use(rateLimitMiddleware); //  ทำงานเป็นลำดัย 
 app.use(express.json());
 
