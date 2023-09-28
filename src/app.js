@@ -11,7 +11,7 @@ const app = express();
 
 
 app.use(cors());
-app.use(morgan("combined"));
+app.use(morgan("tiny")); // เลือกได้ว่าเป็นอะไีร
 app.use(rateLimitMiddleware); //  ทำงานเป็นลำดัย 
 app.use(express.json());
 
