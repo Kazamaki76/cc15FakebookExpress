@@ -10,6 +10,7 @@ const app = express();
 
 
 app.use(cors());
+app.use(rateLimitMiddleware); //  ทำงานเป็นลำดัย 
 app.use(express.json());
 
 app.use(notFoundMiddleware);
