@@ -12,8 +12,8 @@ datasource db {
 
 model User {
   id           Int     @id @default(autoincrement())
-  firstname    String
-  lastname     String
+  firstName    String
+  lastName     String
   email        String? @unique
   mobile       String? @unique
   password     String
@@ -36,7 +36,7 @@ model Post {
   userId    Int
   user      User      @relation(fields: [userId], references: [id])
   comment   comment[]
-  like      like[]
+  likes     like[]
 }
 
 model comment {
@@ -62,7 +62,7 @@ model Friend {
   status      FriendStatus
   createdAt   DateTime     @default(now())
   requesterId Int
-  requesster  User         @relation("requester", fields: [requesterId], references: [id])
+  requester   User         @relation("requester", fields: [requesterId], references: [id])
   receiverId  Int
   receiver    User         @relation("receiver", fields: [receiverId], references: [id])
 }
